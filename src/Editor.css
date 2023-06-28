@@ -1,0 +1,7 @@
+.editor {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}

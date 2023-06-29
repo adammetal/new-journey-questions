@@ -1,3 +1,4 @@
+import RandomCatImage from "./RandomCatImage";
 import RandomQ from "./RandomQ";
 
 function Home() {
@@ -5,7 +6,7 @@ function Home() {
     <div className="home">
       <RandomQ />
       <div className="rest">
-        <h1>Rest of the journey home screen</h1>
+        <RandomCatImage />
       </div>
     </div>
   )

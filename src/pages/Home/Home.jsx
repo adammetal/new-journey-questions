@@ -1,5 +1,5 @@
-import RandomCatImage from "./RandomCatImage";
-import RandomQ from "./RandomQ";
+import RandomCatImage from "./components/RandomCatImage"
+import RandomQ from "./components/RandomQ";
 
 function Home() {
   return (

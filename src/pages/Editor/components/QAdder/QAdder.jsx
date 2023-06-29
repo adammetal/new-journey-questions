@@ -1,4 +1,4 @@
-import QPlaceholder from "./QPlaceholder";
+import QPlaceholder from "../../../../components/QPlaceholder";
 import QAdderForm from "./QAdderForm";
 import { useState } from "react";
 

@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Editor from "./Editor";
-import Home from "./Home";
+import Editor from "./pages/Editor";
+import Home from "./pages/Home";
 
 import "./App.css";
 

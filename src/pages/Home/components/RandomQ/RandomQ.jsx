@@ -1,4 +1,4 @@
-import QPlaceholder from "./QPlaceholder";
+import QPlaceholder from "../../../../components/QPlaceholder";
 
 function RandomQ() {
   return (

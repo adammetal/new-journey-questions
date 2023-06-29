@@ -1,5 +1,5 @@
-import QList from "./QList";
-import QAdder from "./QAdder";
+import QList from "./components/QList/QList";
+import QAdder from "./components/QAdder/QAdder";
 
 import "./Editor.css";
 import { useState } from "react";

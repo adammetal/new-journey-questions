@@ -1,27 +1,27 @@
 import "./QList.css";
 
+function QListItem({ question }) {
+  return (
+    <li>
+      {question}{" "}
+      <div>
+        <button>+</button>
+        <button>-</button>
+      </div>
+    </li>
+  );
+}
+
 function QList(props) {
   // array of strings
-  const questions = props.questions;
-
-  const qs = [];
-
-  for (let i = 0; i < questions.length; i++) {
-    qs.push(
-      <li key={i}>
-        {questions[i]}{" "}
-        <div>
-          <button>+</button>
-          <button>-</button>
-        </div>
-      </li>
-    );
-  }
+  const { questions } = props;
 
   return (
     <div className="q-list">
       <ul>
-        {qs}
+        {questions.map((question, i) => (
+          <QListItem key={i} question={question} />
+        ))}
       </ul>
     </div>
   );

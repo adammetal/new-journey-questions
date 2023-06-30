@@ -1,10 +1,10 @@
 import RandomCatImage from "./components/RandomCatImage"
 import RandomQ from "./components/RandomQ";
 
-function Home() {
+function Home({ questions }) {
   return (
     <div className="home">
-      <RandomQ />
+      <RandomQ questions={questions} />
       <div className="rest">
         <RandomCatImage />
       </div>

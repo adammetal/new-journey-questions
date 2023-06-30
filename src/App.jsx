@@ -1,8 +1,7 @@
 import { useState } from "react";
 import Editor from "./pages/Editor";
 import Home from "./pages/Home";
-
-import "./App.css";
+import { AppBar, Box, Toolbar, Typography, Button } from "@mui/material";
 
 function App() {
   const [page, setPage] = useState("home");
@@ -16,8 +15,6 @@ function App() {
   ]);
 
   function handleAddQuestion(question) {
-    // immulatble
-    // replace the old state
     setFunnyQuestions([...funnyQuestions, question]);
   }
 
@@ -31,7 +28,24 @@ function App() {
     comp = <Home questions={funnyQuestions} />;
   }
 
-  return <div className="app">{comp}</div>;
+  return (
+    <Box>
+      <AppBar position="static">
+        <Toolbar>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            New Journey
+          </Typography>
+          <Button color="inherit" onClick={() => setPage("home")}>
+            Home
+          </Button>
+          <Button color="inherit" onClick={() => setPage("editor")}>
+            Editor
+          </Button>
+        </Toolbar>
+      </AppBar>
+      {comp}
+    </Box>
+  );
 }
 
 export default App;

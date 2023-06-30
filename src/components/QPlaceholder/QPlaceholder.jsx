@@ -1,17 +1,21 @@
-import "./QPlaceholder.css";
+import { Paper, Typography, Box, Button, ButtonGroup } from "@mui/material";
 
 function QPlaceholder(props) {
-  const question = props.question;
+  const { question } = props;
 
   // The return value will be the "view" of this component.
   return (
-    <div className="q-placeholder">
-      <h1>{question}</h1>
-      <div>
-        <button>+</button>
-        <button>-</button>
-      </div>
-    </div>
+    <Paper sx={{ padding: "1rem", marginTop: "1rem" }} elevation={10}>
+      <Box sx={{ display: "flex" }}>
+        <Typography sx={{ flexGrow: 1 }} variant="h4">
+          {question}
+        </Typography>
+        <ButtonGroup variant="contained">
+          <Button>+</Button>
+          <Button>-</Button>
+        </ButtonGroup>
+      </Box>
+    </Paper>
   );
 }
 

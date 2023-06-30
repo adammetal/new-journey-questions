@@ -1,25 +1,31 @@
-import "./QAdderForm.css";
+import { Paper, TextField, Button, Box } from "@mui/material";
 
 function QAdderForm(props) {
-  const question = props.question;
-  const onQuestionChange = props.onQuestionChange;
-  const onQuestionAdded = props.onQuestionAdded;
+  const { question, onQuestionAdded, onQuestionChange } = props;
 
   return (
-    <div className="q-adder-form">
-      <input
-        value={question}
-        onChange={(e) => {
-          onQuestionChange(e.target.value);
+    <Paper sx={{ padding: "1rem" }} elevation={10}>
+      <Box sx={{ display: "flex", flexDirection: "column", marginBottom: "1rem" }}>
+        <TextField
+          variant="outlined"
+          label="Type your question here"
+          value={question}
+          onChange={(e) => {
+            onQuestionChange(e.target.value);
+          }}
+          type="text"
+        />
+      </Box>
+      <Button
+        variant="contained"
+        onClick={() => {
+          onQuestionAdded(question);
+          onQuestionChange("");
         }}
-        type="text"
-        placeholder="Type your question here"
-      />
-      <button onClick={() => {
-        onQuestionAdded(question);
-        onQuestionChange("");
-      }}>Save</button>
-    </div>
+      >
+        Save
+      </Button>
+    </Paper>
   );
 }
 

@@ -1,4 +1,11 @@
-import "./QList.css";
+import {
+  Paper,
+  List,
+  ListItem,
+  Button,
+  ButtonGroup,
+  ListItemText,
+} from "@mui/material";
 
 function QListItem({ question }) {
   return (
@@ -17,13 +24,23 @@ function QList(props) {
   const { questions } = props;
 
   return (
-    <div className="q-list">
-      <ul>
+    <Paper elevation={10}>
+      <List>
         {questions.map((question, i) => (
-          <QListItem key={i} question={question} />
+          <ListItem
+            key={i}
+            secondaryAction={
+              <ButtonGroup variant="contained">
+                <Button>+</Button>
+                <Button>-</Button>
+              </ButtonGroup>
+            }
+          >
+            <ListItemText primary={question} />
+          </ListItem>
         ))}
-      </ul>
-    </div>
+      </List>
+    </Paper>
   );
 }
 
